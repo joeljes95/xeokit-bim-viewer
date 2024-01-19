@@ -555,10 +555,13 @@ class BIMViewer extends Controller {
         const scene = this.viewer.scene;
 
         //start units update...
-        const metrics = viewer.scene.metrics;
+        // const metrics = viewer.scene.metrics;
 
-        metrics.units = "meters";
-        metrics.scale = 10.0;
+        // metrics.units = "meters";
+        // metrics.scale = 10.0;
+
+        scene.metrics = "inches";
+        scene.metrics = 10.0;
         //end units update
 
         // Emphasis effects
