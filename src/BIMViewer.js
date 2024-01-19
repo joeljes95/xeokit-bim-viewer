@@ -557,7 +557,7 @@ class BIMViewer extends Controller {
         //start units update...
         const metrics = viewer.scene.metrics;
 
-        metrics.units = "meters";
+        metrics.units = "inches";
         metrics.scale = 10.0;
 
         // scene.metrics = "inches";
