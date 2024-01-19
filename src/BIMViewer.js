@@ -230,7 +230,7 @@ class BIMViewer extends Controller {
             canvasElement: canvasElement,
             keyboardEventsElement: cfg.keyboardEventsElement,
             transparent: false,
-            backgroundColor: [0.0, 0.0, 0.0],
+            backgroundColor: [1, 1, 1],
             backgroundColorFromAmbientLight: false,
             saoEnabled: true,
             pbrEnabled: false,
@@ -693,7 +693,7 @@ class BIMViewer extends Controller {
             "xrayPickable": false,
             "selectedGlowThrough": true,
             "highlightGlowThrough": true,
-            "backgroundColor": [0.0, 0.0, 0.0],
+            "backgroundColor": [1.0, 1.0, 1.0],
             "externalMetadata": false,
             "dtxEnabled": false
         });
