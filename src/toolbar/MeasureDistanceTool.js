@@ -54,6 +54,10 @@ export class MeasureDistanceTool extends Controller {
             defaultAxisVisible: false
         });
 
+        // Set global measurement units and scale
+        this.viewer.scene.metrics.units = "inches";
+        this.viewer.scene.metrics.scale = 1.0; // 1 unit in the World-space coordinate system represents 1 inch
+
         this._distanceMeasurementsPlugin.on("mouseOver", (e) => {
             e.measurement.setHighlighted(true);
         });
