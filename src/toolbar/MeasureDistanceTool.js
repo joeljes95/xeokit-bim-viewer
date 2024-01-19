@@ -35,7 +35,7 @@ export class MeasureDistanceTool extends Controller {
                     }
                 ], [
                     {
-                        title: "Delete Measurement",
+                        title: "Delete Measurement.",
                         doAction: function (context) {
                             context.measurement.destroy();
                         }
@@ -55,8 +55,8 @@ export class MeasureDistanceTool extends Controller {
         });
 
         // Set global measurement units and scale
-        this.viewer.scene.metrics.units = "inches";
-        this.viewer.scene.metrics.scale = 1.0; // 1 unit in the World-space coordinate system represents 1 inch
+        this.bimViewer.scene.metrics.units = "inches";
+        this.bimViewer.scene.metrics.scale = 1.0; // 1 unit in the World-space coordinate system represents 1 inch
 
         this._distanceMeasurementsPlugin.on("mouseOver", (e) => {
             e.measurement.setHighlighted(true);
