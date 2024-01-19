@@ -51,12 +51,12 @@ export class MeasureDistanceTool extends Controller {
         });
 
         this._distanceMeasurementsPlugin = new DistanceMeasurementsPlugin(this.viewer, {
-            defaultAxisVisible: false
+            defaultAxisVisible: true
         });
 
         // Set global measurement units and scale
-        this.bimViewer.scene.metrics.units = "inches";
-        this.bimViewer.scene.metrics.scale = 1.0; // 1 unit in the World-space coordinate system represents 1 inch
+        this.bimViewer.viewer.scene.metrics.units = "inches";
+        this.bimViewer.viewer.scene.metrics.scale = 1.0; // 1 unit in the World-space coordinate system represents 1 inch
 
         this._distanceMeasurementsPlugin.on("mouseOver", (e) => {
             e.measurement.setHighlighted(true);
