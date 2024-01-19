@@ -693,7 +693,7 @@ class BIMViewer extends Controller {
             "xrayPickable": false,
             "selectedGlowThrough": true,
             "highlightGlowThrough": true,
-            "backgroundColor": [1.0, 1.0, 1.0],
+            "backgroundColor": [0, 0, 0],
             "externalMetadata": false,
             "dtxEnabled": false
         });
