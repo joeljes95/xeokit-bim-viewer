@@ -230,7 +230,7 @@ class BIMViewer extends Controller {
             canvasElement: canvasElement,
             keyboardEventsElement: cfg.keyboardEventsElement,
             transparent: false,
-            backgroundColor: [0.5, 0.5, 0.5],
+            backgroundColor: [0, 0, 0],
             backgroundColorFromAmbientLight: false,
             saoEnabled: true,
             pbrEnabled: false,
