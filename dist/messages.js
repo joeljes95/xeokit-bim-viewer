@@ -49,7 +49,7 @@ const messages = {
         },
         "propertiesInspector": { // The "Properties" tab on the right of the canvas
             "title": "Properties",
-            "noObjectSelectedWarning": "No object inspected. Right-click or long-tab an object and select \'Inspect Properties\' to view its properties here.",
+            "noObjectSelectedWarning": "No object inspected 4. Right-click or long-tab an object and select \'Inspect Properties\' to view its properties here.",
             "noPropSetWarning": "No property sets found for this object."
         },
         "toolbar": { // The toolbar at the top of the canvas
