@@ -5,9 +5,10 @@ class IssueListInspector extends Controller {
         super(bimViewer);
         this._bimViewer = bimViewer;
         this._element = this._createIssueListElement();
-        console.log("An instance of the issue list has been created");
+        console.log("testing panel");
     }
 
+    
     init(issueListPanelCheckbox) {
         // Append the element to the issue list panel if it exists
         if (issueListPanelCheckbox) {
