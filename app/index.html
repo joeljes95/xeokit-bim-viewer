@@ -25,9 +25,6 @@
     <canvas id="myCanvas"></canvas>
     <canvas id="myNavCubeCanvas"></canvas>
 </div>
-
-<button id="showIssuesButton" style="position: absolute; z-index: 10000;">Show Issues List</button>
-<ul id="issuesList"></ul>
 </body>
 
 <!-- Tooltips libraries -->
@@ -300,21 +297,21 @@
             };
             makeBIMTrackAPICall();    
 
-            const displayIssuesList = (data) => {
-                const issuesList = document.getElementById("issuesList");
-                issuesList.innerHTML = ""; // Clear previous entries
+            // const displayIssuesList = (data) => {
+            //     const issuesList = document.getElementById("issuesList");
+            //     issuesList.innerHTML = ""; // Clear previous entries
 
-                data.forEach(issue => {
-                    const listItem = document.createElement("li");
-                    listItem.textContent = issue.Title;
-                    issuesList.appendChild(listItem);
-                });
-            };
+            //     data.forEach(issue => {
+            //         const listItem = document.createElement("li");
+            //         listItem.textContent = issue.Title;
+            //         issuesList.appendChild(listItem);
+            //     });
+            // };
 
-            document.addEventListener("DOMContentLoaded", function () {
-                // Add event listener to the "Show Issues List" button
-                const showIssuesButton = document.getElementById("showIssuesButton");
-                showIssuesButton.addEventListener("click", makeBIMTrackAPICall);
-            });
+            // document.addEventListener("DOMContentLoaded", function () {
+            //     // Add event listener to the "Show Issues List" button
+            //     const showIssuesButton = document.getElementById("showIssuesButton");
+            //     showIssuesButton.addEventListener("click", makeBIMTrackAPICall);
+            // });
 </script>
 </html>
