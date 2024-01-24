@@ -279,12 +279,3 @@ body {
     background-color: #03103F;
     border-color: #03103F;
 }
-
-#toolbarButtonsContainer {
-    position: fixed;
-    top: 10px;
-    right: 20px; /* Adjust the right positioning as needed */
-    display: flex;
-    align-items: center;
-    z-index: 100001; /* Adjust the z-index as needed */
-}
