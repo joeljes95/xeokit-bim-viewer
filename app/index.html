@@ -24,7 +24,7 @@
     <canvas id="myNavCubeCanvas"></canvas>
 </div>
 
-<button id="showIssuesButton">Show Issues List</button>
+<button id="showIssuesButton" style="position: absolute; z-index: 10000;">Show Issues List</button>
 <ul id="issuesList"></ul>
 </body>
 
@@ -266,46 +266,47 @@
 
 </script>
 <script type="module">
-       document.addEventListener("DOMContentLoaded", function () {
-        // Replace 'your-bimtrack-api-key' with your actual BIMTrack API key
-        const apiKey = '8B0D3839E80D70CD4D50A75D9EA92827A29EE16A926774433D769EB488F0AF19';
+     
+            // Replace 'your-bimtrack-api-key' with your actual BIMTrack API key
+            const apiKey = '8B0D3839E80D70CD4D50A75D9EA92827A29EE16A926774433D769EB488F0AF19';
 
-        // Example: Make a BIMTrack API call
-        const makeBIMTrackAPICall = async () => {
-            try {
-                const response = await fetch('https://api.bimtrackapp.co/v3/hubs/qaOJ7uw0/projects/2820/issues?additionalIncludes=Viewpoints', {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${apiKey}`,
-                        'Content-Type': 'application/json'
+            // Example: Make a BIMTrack API call
+            const makeBIMTrackAPICall = async () => {
+                try {
+                    const response = await fetch('https://api.bimtrackapp.co/v3/hubs/qaOJ7uw0/projects/2820/issues?additionalIncludes=Viewpoints', {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${apiKey}`,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
                     }
-                });
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    const data = await response.json();
+                    displayIssuesList(data);
+                } catch (error) {
+                    console.error('Error making BIMTrack API call:', error);
                 }
+            };
 
-                const data = await response.json();
-                displayIssuesList(data);
-            } catch (error) {
-                console.error('Error making BIMTrack API call:', error);
-            }
-        };
+            const displayIssuesList = (data) => {
+                const issuesList = document.getElementById("issuesList");
+                issuesList.innerHTML = ""; // Clear previous entries
 
-        const displayIssuesList = (data) => {
-            const issuesList = document.getElementById("issuesList");
-            issuesList.innerHTML = ""; // Clear previous entries
+                data.forEach(issue => {
+                    const listItem = document.createElement("li");
+                    listItem.textContent = issue.Title;
+                    issuesList.appendChild(listItem);
+                });
+            };
 
-            data.forEach(issue => {
-                const listItem = document.createElement("li");
-                listItem.textContent = issue[Title];
-                issuesList.appendChild(listItem);
+            document.addEventListener("DOMContentLoaded", function () {
+                // Add event listener to the "Show Issues List" button
+                const showIssuesButton = document.getElementById("showIssuesButton");
+                showIssuesButton.addEventListener("click", makeBIMTrackAPICall);
             });
-        };
-
-        // Add event listener to the "Show Issues List" button
-        const showIssuesButton = document.getElementById("showIssuesButton");
-        showIssuesButton.addEventListener("click", makeBIMTrackAPICall);
-    });
 </script>
 </html>
