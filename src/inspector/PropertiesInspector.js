@@ -72,7 +72,7 @@ class PropertiesInspector extends Controller {
 
     clear() {
         const html = [],
-            localizedText = this.viewer.localeService.translate('propertiesInspector.noObjectSelectedWarning') || 'No object inspected. Right-click or long-tab an object and select \'Inspect Properties\' to view its properties here.';
+            localizedText = this.viewer.localeService.translate('propertiesInspector.noObjectSelectedWarning') || 'No object inspected 2. Right-click or long-tab an object and select \'Inspect Properties\' to view its properties here.';
         html.push(`<div class="element-attributes">`);
         html.push(`<p class="xeokit-i18n subsubtitle no-object-selected-warning" data-xeokit-i18n="propertiesInspector.noObjectSelectedWarning">${localizedText}</p>`);
         html.push(`</div>`);
