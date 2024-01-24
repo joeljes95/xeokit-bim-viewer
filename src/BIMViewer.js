@@ -26,6 +26,7 @@ import {ObjectsKdTree3} from "./collision/ObjectsKdTree3.js";
 import {MarqueeSelectionTool} from "./toolbar/MarqueeSelectionTool.js";
 import {MeasureDistanceTool} from "./toolbar/MeasureDistanceTool.js";
 import {MeasureAngleTool} from "./toolbar/MeasureAngleTool.js";
+import { IssueListInspector } from "./inspector/IssueListInspector.js";
 
 
 const hideEdgesMinDrawCount = 5; // FastNavPlugin enables dynamic edges when xeokit's per-frame draw count drops below this
@@ -284,6 +285,19 @@ class BIMViewer extends Controller {
             initTabs(inspectorElement);
         }
 
+        if (this._enablePropertiesInspector) {
+            this._propertiesInspector = new PropertiesInspector(this, {
+                propertiesTabElement: inspectorElement.querySelector(".xeokit-propertiesTab"),
+                propertiesElement: inspectorElement.querySelector(".xeokit-properties")
+            });
+        }
+
+        // Add the following code to initialize IssueListInspector
+        const issueListInspectorPanelCheckbox = document.getElementById("issues_panel_toggle");
+        this._issueListInspector = new IssueListInspector(this);
+        this._issueListInspector.init(issueListInspectorPanelCheckbox);
+        
+        
         this._modelsExplorer = new ModelsExplorer(this, {
             enableMeasurements: this._enableMeasurements,
             modelsTabElement: explorerElement.querySelector(".xeokit-modelsTab"),

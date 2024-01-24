@@ -263,6 +263,10 @@
             return hashParams;
         }
 
+         // Initialize the issue list panel joeljes
+            const issueListPanel = document.getElementById("issues_panel_toggle");
+            bimViewer.initIssueListPanel(issueListPanel);
+
         window.bimViewer = bimViewer;
     }
 
